@@ -19,14 +19,17 @@
         "cells": [
           {
             "position": {
-              "x": 220,
-              "y": 80
+              "x": 135,
+              "y": 166
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 170,
+              "height": 130
             },
             "attrs": {
+              "text": {
+                "text": "App to move servo"
+              },
               "body": {
                 "stroke": "#333333",
                 "strokeWidth": 1.5,
@@ -35,29 +38,108 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "ad3f4dab-ec0c-4ef1-8735-ec26003ab6cb",
+            "id": "3205e118-8b0f-49d0-bd45-c241216c0a0e",
             "zIndex": 1,
             "data": {
-              "type": "tm.Process",
-              "name": "Process",
+              "type": "tm.Flow",
+              "name": "App to move servo",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [],
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
             }
           },
           {
             "position": {
-              "x": 480,
-              "y": 210
+              "x": 70,
+              "y": 29.999999999999993
             },
             "size": {
               "width": 120,
               "height": 60
             },
             "attrs": {
+              "text": {
+                "text": "Luminosity Sensor"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "id": "88ccba84-f901-4a3f-b94a-ad1e2ee090db",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Flow",
+              "name": "Luminosity Sensor",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "providesAuthentication": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isBidirectional": false,
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false
+            }
+          },
+          {
+            "position": {
+              "x": 250,
+              "y": 30
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Servo"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "id": "65b48ea6-ee04-44ca-85dd-f3c036dddd72",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Servo",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "providesAuthentication": false,
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 160,
+              "y": 406
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Database"
+              },
               "topLine": {
                 "strokeWidth": 1.5,
                 "strokeDasharray": null
@@ -69,8 +151,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "5100500b-6e02-451b-b143-8ff7c82c8223",
-            "zIndex": 2,
+            "id": "85433f84-a00b-4304-a8d2-ee4bbb87bacb",
+            "zIndex": 4,
             "data": {
               "type": "tm.Flow",
               "name": "Data Flow",
@@ -119,14 +201,227 @@
               "hasOpenThreats": false,
               "threats": []
             },
-            "id": "b567312d-e068-4cb3-b507-60458533df43",
+            "id": "3ce4dace-dc44-42c1-ba88-493c5a12b3b3",
             "source": {
-              "cell": "ad3f4dab-ec0c-4ef1-8735-ec26003ab6cb"
+              "x": 100,
+              "y": 90
             },
             "target": {
-              "x": 480,
-              "y": 250
-            }
+              "x": 160,
+              "y": 220
+            },
+            "vertices": [
+              {
+                "x": 100,
+                "y": 130
+              }
+            ],
+            "labels": [
+              "Light Reading"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Arm Position",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "9446bbe4-3a35-4701-8245-0519be167455",
+            "source": {
+              "x": 360,
+              "y": 90
+            },
+            "target": {
+              "cell": "3205e118-8b0f-49d0-bd45-c241216c0a0e"
+            },
+            "vertices": [
+              {
+                "x": 330,
+                "y": 130
+              }
+            ],
+            "labels": [
+              "Arm Position"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Move Command",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "6f585ce9-b7bc-4923-bc92-3d47099475c9",
+            "source": {
+              "cell": "3205e118-8b0f-49d0-bd45-c241216c0a0e"
+            },
+            "target": {
+              "x": 290,
+              "y": 90
+            },
+            "vertices": [
+              {
+                "x": 228.5,
+                "y": 140
+              }
+            ],
+            "labels": [
+              "Move Command"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data from App",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "4bb9c591-193d-4e23-8c7a-01b95ba20799",
+            "source": {
+              "cell": "3205e118-8b0f-49d0-bd45-c241216c0a0e"
+            },
+            "target": {
+              "x": 170,
+              "y": 400
+            },
+            "vertices": [
+              {
+                "x": 200,
+                "y": 380
+              }
+            ],
+            "labels": [
+              "Data from App"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Validation Data",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "780a98fe-dbe2-4518-972d-7f682ee4fc76",
+            "source": {
+              "cell": "85433f84-a00b-4304-a8d2-ee4bbb87bacb"
+            },
+            "target": {
+              "cell": "3205e118-8b0f-49d0-bd45-c241216c0a0e"
+            },
+            "vertices": [
+              {
+                "x": 280,
+                "y": 380
+              },
+              {
+                "x": 300,
+                "y": 350
+              },
+              {
+                "x": 300,
+                "y": 330
+              }
+            ],
+            "labels": [
+              "Validation Data"
+            ]
           }
         ]
       }
